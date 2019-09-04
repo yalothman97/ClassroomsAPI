@@ -11,3 +11,10 @@ class ClassroomDetailSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Classroom
 		fields = '__all__'
+
+class ClassroomCreateSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Classroom
+		exclude = ['teacher']
+
+

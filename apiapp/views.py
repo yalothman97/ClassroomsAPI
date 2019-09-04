@@ -6,7 +6,7 @@ from rest_framework.generics import (CreateAPIView,ListAPIView,
 	RetrieveAPIView,RetrieveUpdateAPIView,
 	DestroyAPIView)
 
-from .serializer import ClassroomListSerializer, ClassroomDetailSerializer
+from .serializer import ClassroomListSerializer, ClassroomDetailSerializer, ClassroomCreateSerializer
 
 # Create your views here.
 class ClassroomList(ListAPIView):
@@ -22,7 +22,7 @@ class ClassroomDetail(RetrieveAPIView):
 
 
 class ClassroomCreate(CreateAPIView):
-	serializer_class = ClassroomDetailSerializer
+	serializer_class = ClassroomCreateSerializer
 
 	def perform_create(self,serializer):
 		serializer.save(teacher = self.request.user)

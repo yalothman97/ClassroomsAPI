@@ -22,11 +22,10 @@ class ClassroomDetail(RetrieveAPIView):
 
 
 class ClassroomCreate(CreateAPIView):
-	queryset = Classroom.objects.all()
 	serializer_class = ClassroomDetailSerializer
 
 	def perform_create(self,serializer):
-		serializer.save(user = self.request.user)
+		serializer.save(teacher = self.request.user)
 
 
 class ClassroomUpdate(RetrieveUpdateAPIView):

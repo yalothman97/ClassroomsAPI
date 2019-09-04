@@ -27,7 +27,7 @@ urlpatterns = [
     path('classroomapi/create/', api_views.ClassroomCreate.as_view(), name='classapi-create'),
 
 
-    path('token/', TokenObtainPairView.as_view(), name='token'),
+    path('ctoken/', TokenObtainPairView.as_view(), name='token'),
 ]
 
 if settings.DEBUG:
